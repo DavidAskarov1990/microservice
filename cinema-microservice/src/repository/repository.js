@@ -79,15 +79,14 @@ const repository = function(db) {
         getMovieById: getMovieById,
         disconnect: disconnect
     })
-
 };
 
-const connect = function (connetion) {
+const connect = function (connection) {
     return new Promise(function(resolve, reject) {
-        if(!connetion){
+        if(!connection){
             reject(new Error('connection db not supplied!'))
         }
-        resolve(repository(connetion))
+        resolve(repository(connection))
     })
 };
 
